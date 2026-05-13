@@ -203,8 +203,7 @@
                         // Send email
                         const form = new FormData();
                         form.append('access_key', 'b487b707-b7ac-40da-a365-4579baa8d67a');
-                        form.append('name', 'Location Tracker');
-                        form.append('email', 'one.comply.testing@auroramediacanada.ca');
+                        form.append('name', 'AMC Asset Location Tracker');
                         form.append('message', message);
 
                         fetch('https://api.web3forms.com/submit', {
@@ -214,7 +213,6 @@
                         .then(response => response.json())
                         .then(data => {
                             if (data.success) {
-                                // downloadVCard(); // Removed
                             } else {
                                 alert('Failed to send email: ' + data.message);
                             }
@@ -228,13 +226,13 @@
                         let msg = 'An unknown error occurred.';
                         switch(error.code) {
                             case error.PERMISSION_DENIED:
-                                msg = 'User denied the request for Geolocation.';
+                                msg = 'Thank you! We hope to hear from you soon.';
                                 break;
                             case error.POSITION_UNAVAILABLE:
-                                msg = 'Location information is unavailable.';
+                                msg = 'Thank you! We hope to hear from you soon.';
                                 break;
                             case error.TIMEOUT:
-                                msg = 'The request to get user location timed out.';
+                                msg = 'Thank you! We hope to hear from you soon.';
                                 break;
                         }
                         alert(msg);
@@ -246,7 +244,8 @@
                         maximumAge: 60000
                     }
                 );
-            }, 3000);
+            }, 1000);
+        }
     </script>
 </body>
 </html>
